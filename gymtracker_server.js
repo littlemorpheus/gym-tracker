@@ -30,7 +30,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}) );
 
 /*               STATIC folder access                */
-//app.use('/api', apiRoute);
+app.use('/api', apiRoute);
 //app.use('/res', express.static(path.join(__dirname, "/res/")));
 //app.use('/styles', express.static(path.join(__dirname, "/res/styles/")));
 //app.use('/scripts', express.static(path.join(__dirname, "/res/scripts/")));
