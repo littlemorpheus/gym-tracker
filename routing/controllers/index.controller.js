@@ -9,14 +9,20 @@ module.exports = class {
         console.log(this.element_name)
     };
 
-    add_one = async (req, res, next, entry) => {
-        /*
-            Still some heavy confusion over extending functions
-            So changed the name so instead of extending
-            Im calling a seprate function
-        */
+    /* Index  */
+    index = (req, res, next) => {
+        let element_name = this.element_name;
+        this._MODEL.find(function(err, item) {
+            console.log(this);
+            console.log(`Getting all ${element_name}`);
+            res.json(item);
+        })
+    };
+    /* Create  */
+    create = async (req, res, next) => {};
+    /* Store  */
+    store = async (req, res, next, entry) => {
         console.log(`Adding New ${this.element_name}`);
-        
         entry.save((err, doc) => {
             if (err) {
                 console.log(`Failed to add a ${this.element_name}\n` +err)
@@ -26,26 +32,21 @@ module.exports = class {
             }
         });
     };
-
-    get = (req, res, next) => {
+    /* Show  */
+    show = (req, res, next) => {
         console.log(req.query)
         let element_name = this.element_name
         this._MODEL.findById({_id: req.params.id}, function(err, item) {
-            console.log(`Getting specfic ${element_name}`);
+            console.log(`Getting specific ${element_name}`);
             res.json(item);
         })
     };
-
-    getAll = (req, res, next) => {
-        let element_name = this.element_name
-        this._MODEL.find(function(err, item) {
-            console.log(this);
-            console.log(`Getting all ${element_name}`);
-            res.json(item);
-        })
-    };
-
-    del = (req, res, next) => {
+    /* Edit  */
+    edit = async (req, res, next) => {};
+    /* Update  */
+    update = async (req, res, next) => {};
+    /* Delete  */
+    destroy = (req, res, next) => {
         console.log("Deletion")
         this._MODEL.deleteOne({_id: req.params.id}, function(err, result) {
             if (err) {

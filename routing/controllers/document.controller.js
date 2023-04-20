@@ -1,5 +1,5 @@
 const multer = require('multer');
-const Media = require('../models/media.model');
+const Document = require('../models/Document.model');
 
 const MIME_TYPE_MAP = {
     'image/gif': 'gif',
@@ -23,7 +23,7 @@ var storage = multer.diskStorage({
 })
 
 module.exports.upload = multer({storage: storage});
-module.exports.addImage = async (req, res, next) => {
+module.exports.addDocument = async (req, res, next) => {
     console.log("Adding New Image");
 
     const url = `${req.protocol}://${req.get("host")}`
@@ -36,7 +36,7 @@ module.exports.addImage = async (req, res, next) => {
             decription: req.body.decription,
             
             path: url + '/images',
-            media_type: 'image',//Change Later
+            document_type: 'image',//Change Later
         });
         img.save((err, doc) => {
             if (err) {
@@ -52,7 +52,7 @@ module.exports.addImage = async (req, res, next) => {
     }
 }
 
-module.exports.getImage = (req, res, next) => {
+module.exports.getDocument = (req, res, next) => {
     Image.findById({_id: req.params.id}, function(err, img) {
         console.log("Getting specfic Image");
         content = {

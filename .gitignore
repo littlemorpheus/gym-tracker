@@ -1,7 +1,2 @@
 /config/config.json
 node_modules
-
-
-#Client Related
-config/client.config.js
-routing/auth.js

@@ -1,11 +1,12 @@
 {
-  "name": "gym-crud-app",
-  "version": "1.0.0",
-  "description": "A simple app to record your your progress in your gym workout, and what you are doing. This is a simple intial version of the app to demonstrate my abilities with a CRUD application.",
-  "main": "gymsesh_server.js",
+  "name": "gym-tracker-app",
+  "version": "2.0.0",
+  "description": "A simple MEAN stack CRUD application w/ API integration. This is a simple application to create and then track your workout",
+  "main": "gymtracker_server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon gymsesh_server.js"
+    "dev": "nodemon gymsesh_server.js",
+    "start": "node gymsesh_server.js"
   },
   "author": "littlemorphues",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.1",

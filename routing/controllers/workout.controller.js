@@ -1,4 +1,3 @@
-const { model } = require('mongoose');
 const Workout = require('../models/workout.model');
 const Control = require('./index.controller');
 
@@ -7,12 +6,13 @@ module.exports = class extends Control {
         super("Workout", Workout);
     }
 
-    add = async (req, res, next) => {
+    store = async (req, res, next) => {
         let workout = new Workout({
             name: req.body.name,
-            sections: req.body.sections
+            description: req.body.description,
+            private: req.body.private
         });
-        this.add_one(req, res, next, workout)
+        this.store(req, res, next, workout)
     }
 
     getByFilter = (req, res, next) => {

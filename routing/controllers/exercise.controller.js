@@ -1,18 +1,23 @@
 const Exercise = require('../models/exercise.model')
-const Control = require('./index.controller');
+const Controller = require('./index.controller');
 
-module.exports = class extends Control {
+module.exports = class extends Controller {
     constructor() {
         super("Exercise", Exercise);
     }
 
-    add = async (req, res, next) => {
+    store = async (req, res, next) => {
         console.log("Adding Exercise")
-        let exercise = new Exercise({
+
+        const exercise = new Exercise({
             name: req.body.name,
-            videos: req.body.videos,
-            images: req.body.images
+            type: req.body.type,
+            muscle: req.body.muscle,
+            equipment: req.body.equipment,
+            difficulty: req.body.difficulty,
+            instructions: req.body.instructions
         });
-        this.add_one(req, res, next, exercise)
+
+        this.store(req, res, next, exercise)
     }
 }
