@@ -1,3 +1,13 @@
+/* TODOs */
+/*
+1. Implement Foreign Keys
+2. Implement controller functions
+3. Implement routes
+4. 
+5. 
+6. 
+*/
+
 /*            Configuration            */
 require('./config/config');
 require('./config/db.config');
