@@ -13,6 +13,6 @@ module.exports = class extends Controller {
             order: req.body.order,
         });
 
-        this.store(req, res, next, completed_exercise)
+        this.add(req, res, next, completed_exercise)
     }
 }

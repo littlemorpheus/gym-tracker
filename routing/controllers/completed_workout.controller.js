@@ -13,6 +13,6 @@ module.exports = class extends Controller {
             
         });
 
-        this.store(req, res, next, completed_workout)
+        this.add(req, res, next, completed_workout)
     }
 }

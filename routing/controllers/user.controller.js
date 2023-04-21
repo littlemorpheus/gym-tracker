@@ -13,6 +13,6 @@ module.exports = class extends Control {
             email: req.body.email,
             password: req.body.password /* TODO: Hash password */
         });
-        this.store(req, res, next, user)
+        this.add(req, res, next, user)
     }
 }

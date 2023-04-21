@@ -13,6 +13,6 @@ module.exports = class extends Controller {
             rep_number: req.body.rep_number,
         });
 
-        this.store(req, res, next, completed_set)
+        this.add(req, res, next, completed_set)
     }
 }

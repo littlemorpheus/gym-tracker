@@ -12,7 +12,7 @@ module.exports = class extends Control {
             description: req.body.description,
             private: req.body.private
         });
-        this.store(req, res, next, workout)
+        this.add(req, res, next, workout)
     }
 
     getByFilter = (req, res, next) => {

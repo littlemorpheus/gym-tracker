@@ -21,8 +21,11 @@ module.exports = class {
     /* Create  */
     create = async (req, res, next) => {};
     /* Store  */
-    store = async (req, res, next, entry) => {
+    add = async (req, res, next, entry) => {
+        setTimeout( function() {
         console.log(`Adding New ${this.element_name}`);
+        console.log(entry);
+
         entry.save((err, doc) => {
             if (err) {
                 console.log(`Failed to add a ${this.element_name}\n` +err)
@@ -30,7 +33,7 @@ module.exports = class {
             } else {
                 res.json({msg: `${this.element_name} added`})
             }
-        });
+        })}, 10000);
     };
     /* Show  */
     show = (req, res, next) => {

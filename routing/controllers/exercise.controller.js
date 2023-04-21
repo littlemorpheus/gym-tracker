@@ -7,8 +7,6 @@ module.exports = class extends Controller {
     }
 
     store = async (req, res, next) => {
-        console.log("Adding Exercise")
-
         const exercise = new Exercise({
             name: req.body.name,
             type: req.body.type,
@@ -18,6 +16,6 @@ module.exports = class extends Controller {
             instructions: req.body.instructions
         });
 
-        this.store(req, res, next, exercise)
+        this.add(req, res, next, exercise)
     }
 }
