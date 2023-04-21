@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 /* Completed Exercise Model */
-/* TODO: Change to represent a completed_exercise */
 const completedExerciseSchema = mongoose.Schema( {
-    order: { type: Number },
-    /* TODO: Add Foreign Key for Completed Workout */
-    /* TODO: Add Foreign Key for Exercise */
-    /* TODO: Add Foreign Key for Comment */
+    order: { type: Number, required: true },
+    comment: { type: String },
+    completed_workout: { type: ObjectId, ref: 'CompletedWorkout', required: true },
+    exercise: { type: ObjectId, ref: 'Exercise', required: true }
 });
 
 const CompletedExercise = module.exports = mongoose.model('CompletedExercise', completedExerciseSchema);

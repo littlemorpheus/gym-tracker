@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 /* Completed Workout Model */
-/* TODO: Change to represent a completed_workout */
 const completedWorkoutSchema = mongoose.Schema( {
-    /* Foreign Key for User */
-    /* Foreign Key for Workout */
-    /* TODO: Add Foreign Key for Comment */
+    user: { type: ObjectId, ref: 'User', required: true },
+    workout: { type: ObjectId, ref: 'Workout', required: true },
+    comment: { type: String }
 });
 
 const CompletedWorkout = module.exports = mongoose.model('CompletedWorkout', completedWorkoutSchema);

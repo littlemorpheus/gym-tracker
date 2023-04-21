@@ -4,10 +4,7 @@ const mongoose = require('mongoose');
 /* TODO: Change to represent a set */
 const /* Schema Name */ = mongoose.Schema( {
 
-    name: {  type: String, 
-        required: [true, 'Name Required'], 
-        unique: true 
-    },
+    name: {  type: String, required: [true, 'Name Required'], unique: true },
     
 });
 
