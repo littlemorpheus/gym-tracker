@@ -44,8 +44,8 @@ app.use(express.static(path.join(__dirname, "/dist/")));
 //    res.sendFile(path.join(__dirname, '/dist/index.html'));
 //}); 
 
-//app.listen(port, hostname, () => {
-//    let date = new Date();
-//    console.log(`Starting at ${date.toDateString()} ${date.toTimeString()}`);
-//    console.log(`Server running at http://${hostname}:${port}/`);
-//  });
+app.listen(port, hostname, () => {
+    let date = new Date();
+    console.log(`Starting at ${date.toDateString()} ${date.toTimeString()}`);
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
