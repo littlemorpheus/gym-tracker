@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 /* TODO: Change to represent a user */
 /* TODO: Decide whether to build from scratch to test skills and teach, or whether to just use a library */
 const userSchema = mongoose.Schema( {
-    username: { type: String, required: [true, 'Name Required'] },
+    display_name: { type: String, required: [true, 'Name Required'] },
     name: { type: String },
     email: { type: String, required: [true, 'Email Required'], unique: [true, 'Email needs to be unique'] },
     /* TODO: Implement password stuff */
