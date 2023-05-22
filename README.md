@@ -13,3 +13,4 @@ _[Should be noted that the Angular portion of this is still underdevelopment so 
  _[Still under development]_
  
  ## Author
+Elliot (aka littlemorpheus)
